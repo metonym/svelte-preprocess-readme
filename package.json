@@ -1,0 +1,51 @@
+{
+  "name": "svelte-preprocess-readme",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Develop and demo Svelte components from your README.md",
+  "author": "Eric Liu (https://github.com/metonym)",
+  "main": "./dist/svelte-preprocess-readme.umd.js",
+  "module": "./dist/svelte-preprocess-readme.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/svelte-preprocess-readme.es.js",
+      "require": "./dist/svelte-preprocess-readme.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "prepack": "vite build && tsc",
+    "test": "node -r tsm tests"
+  },
+  "dependencies": {
+    "is-absolute-url": "^4.0.1",
+    "markdown-it": "^12.2.0",
+    "prism-svelte": "^0.4.7",
+    "prismjs": "^1.25.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^12.2.3",
+    "@types/node": "^16.11.4",
+    "@types/prismjs": "^1.16.6",
+    "svelte": "^3.44.0",
+    "tsm": "^2.1.2",
+    "typescript": "^4.3.5",
+    "vite": "^2.4.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metonym/svelte-preprocess-readme"
+  },
+  "homepage": "https://github.com/metonym/svelte-preprocess-readme",
+  "bugs": "https://github.com/metonym/svelte-preprocess-readme/issues",
+  "keywords": [
+    "readme",
+    "readme-driven-development",
+    "svelte-preprocessor",
+    "svelte"
+  ],
+  "files": [
+    "dist"
+  ]
+}
