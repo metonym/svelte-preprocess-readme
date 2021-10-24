@@ -1,6 +1,6 @@
 {
   "name": "svelte-preprocess-readme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Develop and demo Svelte components from your README.md",
   "author": "Eric Liu (https://github.com/metonym)",
