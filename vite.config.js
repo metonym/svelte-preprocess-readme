@@ -4,16 +4,17 @@ export default {
   build: {
     lib: {
       entry: "src",
-      name: pkg.name
+      name: pkg.name,
     },
     rollupOptions: {
       external: Object.keys(pkg.dependencies),
       output: {
         globals: {
-          'markdown-it': 'Markdown',
-          prismjs: 'Prism'
-        }
-      }
+          "markdown-it": "Markdown",
+          prismjs: "Prism",
+          "is-absolute-url": "isAbsoluteUrl",
+        },
+      },
     },
   },
 };
