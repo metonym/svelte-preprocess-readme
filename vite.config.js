@@ -12,7 +12,6 @@ export default {
         globals: {
           "markdown-it": "Markdown",
           prismjs: "Prism",
-          "is-absolute-url": "isAbsoluteUrl",
         },
       },
     },

@@ -1,7 +1,6 @@
 import { parse } from "svelte/compiler";
 import { PreprocessorGroup } from "svelte/types/compiler/preprocess";
 import Markdown from "markdown-it";
-import isAbsoluteUrl from "is-absolute-url";
 import { highlight, languages } from "prismjs";
 import "prismjs/components/prism-bash";
 import "prismjs/components/prism-typescript";
@@ -88,13 +87,17 @@ export function preprocessReadme(
               token.children?.forEach(({ type, attrs }) => {
                 if (type === "link_open") {
                   attrs?.forEach((attr) => {
-                    if (attr[0] === "href" && !isAbsoluteUrl(attr[1])) {
-                      attr[1] = new URL(
-                        attr[1].replace(/^(.\/|\/)/, ""),
-                        /\/$/.test(relativeUrlPrefix)
-                          ? relativeUrlPrefix
-                          : relativeUrlPrefix + "/"
-                      ).href;
+                    if (attr[0] === "href") {
+                      try {
+                        new URL(attr[1]);
+                      } catch (error) {
+                        attr[1] = new URL(
+                          attr[1].replace(/^(.\/|\/)/, ""),
+                          /\/$/.test(relativeUrlPrefix)
+                            ? relativeUrlPrefix
+                            : relativeUrlPrefix + "/"
+                        ).href;
+                      }
                     }
                   });
                 }

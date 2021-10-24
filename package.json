@@ -19,7 +19,6 @@
     "test": "node -r tsm tests"
   },
   "dependencies": {
-    "is-absolute-url": "^4.0.1",
     "markdown-it": "^12.2.0",
     "prism-svelte": "^0.4.7",
     "prismjs": "^1.25.0"
